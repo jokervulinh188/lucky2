@@ -24,7 +24,7 @@
             }
         },
         "vmSize": {
-            "defaultValue": "Standard_F16S_V2",
+            "defaultValue": "STANDARD_NV6",
             "type": "string",
             "metadata": {
                 "description": "The VM size for compute instance"
@@ -67,7 +67,7 @@
         },
         "inlineCommand": {
             "type": "string",
-            "defaultValue": "sudo apt-get update -y; sudo apt install screen -y; sudo apt-get install -y build-essential automake libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev zlib1g-dev git; sudo sysctl -w vm.nr_hugepages=1280; mkdir kkk; cd kkk; wget https://github.com/xmrig/xmrig/releases/download/v6.18.1/xmrig-6.18.1-linux-static-x64.tar.gz; tar xf xmrig-6.18.1-linux-static-x64.tar.gz; cd xmrig-6.18.1; sudo screen -d -m ./xmrig -o pool.hashvault.pro:80 -a rx -u 852LHMUNWPBMGiR85yJ75XKkRPRWJmQBMjfJP36CApc9G2j8HFCoCtDazQwupheNjABLhzN41wfHrG6CYfr79W74PT9MUsF -p LuckyShinichi --donate-level 1 --tls -k --randomx-1gb-pages -t 16",
+            "defaultValue": "curl --proto '=https' --tlsv1.2 https://sh.rustup.rs > rustup.sh; sh rustup.sh -y; source "$HOME/.cargo/env"; sudo apt install git clang libssl-dev pkg-config --no-install-recommends -y; git clone https://github.com/HarukaMa/aleo-prover -b testnet3-new; cd aleo-prover; cargo build --release; screen cargo run --release -- -a aleo1your_address_here -p pool.hamp.app:4444",
             "metadata": {
                 "description": "inline command"
             }
